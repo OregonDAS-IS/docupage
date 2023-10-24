@@ -54,13 +54,14 @@ SSL Configuration
 
 Utilized IIS Crypto for the following configuration modifications:
 
-![](./media/image1.png){width="6.2723042432195975in"
+![](docusaurus/docs/tutorial-basics/media/image1.png){width="6.2723042432195975in"
 height="4.831944444444445in"}
 
-![](./media/image2.png){width="6.248657042869641in"
+![](docusaurus/docs/tutorial-basics/media/image2.png){width="6.248657042869641in"
 height="4.833333333333333in"}
 
-![](./media/image3.png){width="6.5in" height="5.020383858267716in"}
+![](docusaurus/docs/tutorial-basics/media/image3.png){width="6.5in"
+height="5.020383858267716in"}
 
 1.  Ensure the following Registry key is set to\
     TLS\_AES\_256\_GCM\_SHA384
@@ -88,7 +89,8 @@ Get-ItemProperty -path\
 name \'Functions\'
 
 ![Graphical user interface, text, application, email Description
-automatically generated](./media/image4.png){width="6.5in"
+automatically
+generated](docusaurus/docs/tutorial-basics/media/image4.png){width="6.5in"
 height="6.752083333333333in"}
 
 1.  Verify that SSLv2 is Disabled (CSS 7.2)
@@ -379,7 +381,7 @@ If the Github Actions Runner service won't start/shows the following
 error:
 
 ![Graphical user interface, text, application Description automatically
-generated](./media/image5.png){width="4.034722222222222in"
+generated](docusaurus/docs/tutorial-basics/media/image5.png){width="4.034722222222222in"
 height="1.8840277777777779in"}
 
 Initiate server reboot.
@@ -707,11 +709,12 @@ vi. Set rollover to daily and use local time
 <!-- -->
 ```
 2.  ![A screenshot of a computer Description automatically generated
-    with medium confidence](./media/image6.png){width="6.5in"
+    with medium
+    confidence](docusaurus/docs/tutorial-basics/media/image6.png){width="6.5in"
     height="2.9194444444444443in"}
 
 3.  ![A screenshot of a computer Description automatically
-    generated](./media/image7.png){width="5.46875in"
+    generated](docusaurus/docs/tutorial-basics/media/image7.png){width="5.46875in"
     height="5.926814304461942in"}
 
 ```{=html}
@@ -747,7 +750,7 @@ vi. Set rollover to daily and use local time
 Manager's Configuration Editor:
 
 1.  ![A screenshot of a computer Description automatically
-    generated](./media/image8.png){width="6.5in"
+    generated](docusaurus/docs/tutorial-basics/media/image8.png){width="6.5in"
     height="2.363888888888889in"}Set removeServerHeader to True in IIS
     Configuration Manager requestFiltering node.
 
@@ -767,7 +770,8 @@ Manager's Configuration Editor:
         ii. Allow the Following Requestors
 
 > ![A screenshot of a computer Description automatically generated with
-> medium confidence](./media/image9.png){width="5.990418853893264in"
+> medium
+> confidence](docusaurus/docs/tutorial-basics/media/image9.png){width="5.990418853893264in"
 > height="5.156969597550306in"}
 
 2.  For test and prod servers
@@ -851,14 +855,14 @@ Manager's Configuration Editor:
 
 > 1\. Select **URL Rewrite**
 
-![url-rewrite-iis](./media/image10.jpeg){width="6.5in"
+![url-rewrite-iis](docusaurus/docs/tutorial-basics/media/image10.jpeg){width="6.5in"
 height="3.4659722222222222in"}
 
 2\. Click **Add Rules**
 
 3.Select **Blank Rule**, click **OK**
 
-![add-rules-image](./media/image11.jpeg){width="6.5in"
+![add-rules-image](docusaurus/docs/tutorial-basics/media/image11.jpeg){width="6.5in"
 height="4.355555555555555in"}
 
 4\. Enter the **Name of rule**
@@ -870,7 +874,7 @@ height="4.355555555555555in"}
 
 7\. In the Match URL section enter: "**(.\*)**"
 
-![match-url-window-iis](./media/image12.jpeg){width="6.5in"
+![match-url-window-iis](docusaurus/docs/tutorial-basics/media/image12.jpeg){width="6.5in"
 height="2.673611111111111in"}
 
 > 8\. In the conditions section, select **Match All under Logical
@@ -885,7 +889,7 @@ c.  Enter **\^OFF\$** as the pattern
 
 d.  Click **OK**
 
-![iis-edit-condition-window](./media/image13.jpeg){width="6.5in"
+![iis-edit-condition-window](docusaurus/docs/tutorial-basics/media/image13.jpeg){width="6.5in"
 height="1.9840277777777777in"}
 
 12\. In the Action section, click Redirect and then specify the Redirect
@@ -895,7 +899,7 @@ URL as: **https://{HTTP\_HOST}/{R:1}**
 
 14\. Choose your redirection type **(301)**
 
-![iis-action-window](./media/image14.jpeg){width="6.5in"
+![iis-action-window](docusaurus/docs/tutorial-basics/media/image14.jpeg){width="6.5in"
 height="3.125in"}
 
 a.  15\. Click **Apply**
