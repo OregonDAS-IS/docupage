@@ -47,8 +47,8 @@ jobs:
       - name: test some commands
         run: |
 
-          apt-get update
-          apt-get install git
+          sudo apt-get update
+          sudo apt-get install git
 
           SHA=`git log --pretty=format:'%H' -n 1`
 
