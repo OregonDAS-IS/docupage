@@ -21,7 +21,7 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-latest
     container:
-      image: docker://pandoc/latex:2.9
+      image: docker://pandoc/core:2.9
       options: --entrypoint=sh
     steps:
       - name: checkout
@@ -33,7 +33,7 @@ jobs:
           done
       - name: convert docx to md
         run: |
-          find import/ -iname '*.docx' -type f -exec sh -c 'pandoc ${0} -t markdown -f docx --extract-media=. -o output/${0%.md}.md' {} \;
+          find import/ -iname '*.docx' -type f -exec sh -c 'pandoc ${0} -t markdown -f docx --extract-media=. --verbose -o output/${0%.md}.md' {} \;
       #- uses: docker://pandoc/core:2.9
         #with:
 #          args: --output "${{ github.event.inputs.output_file }}" -t markdown -f docx "${{ github.event.inputs.input_file }}" --extract-media=docusaurus/docs/tutorial-basics
@@ -46,17 +46,21 @@ jobs:
 
       - name: test some commands
         run: |
+
+          apt-get update
+          apt-get install git
+
           SHA=`git log --pretty=format:'%H' -n 1`
 
           echo $SHA
           git config --global user.email ${{ github.actor }}@users.noreply.github.com
           git config --global user.name ${{ github.actor }}
           
-          git checkout -b ${{ github.run_id }} 
+          git checkout -b converted/${{ github.run_id }} 
           git add .
           git commit -m "Convert docx to markdown"
 
-          git push -u origin ${{ github.run_id }}
+          git push -u origin converted/${{ github.run_id }}
 
           # GitHub CLI api
 
